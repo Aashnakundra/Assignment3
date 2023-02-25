@@ -1,4 +1,4 @@
-const{ reject } = require("assert");
+const{ rejects } = require("assert");
 const exp = require("express");
 const fs = require("fs");
 const { resolve } = require("path");
@@ -32,7 +32,7 @@ module.exports = {
       });
    
     
-    })
+    });
     },
     AllPosts: () => {
         return new Promise((res, rej) => {
@@ -81,8 +81,8 @@ module.exports = {
         } else postData.published = true;
         let newvar = [];
 
-        fs.readFile(",/data/posts.json","utf8", (err, data) => {
-          if( JSON.parse(data).length) {
+        fs.readFile("./data/posts.json","utf8", (err, data) => {
+          if( JSON.parse(data).length <=0) {
           throw new Error("no results returned");
         } else {
           newvar = JSON.parse(data);
@@ -122,13 +122,13 @@ module.exports = {
 
       PostID: (id) => {
         return new Promise((resolve, reject) => {
-          let  pst 
+          let  pst; 
           this.AllPosts.then((posts)=>
-          posts.forEach((l)=>
+          posts.forEach((z) =>
           {
-            if(l.id==id)
+            if(z.id==id)
             {
-              pst=l;
+              pst= z;
             }
           })
           )
@@ -136,7 +136,7 @@ module.exports = {
         .catch((err)=>reject("No result returned"));
           });
         },
-      PostsBycategory: (catgry) => {
+      PostsByCategory: (catgry) => {
         return new Promise((resolve, reject) => {
           
           let outputs = [];
