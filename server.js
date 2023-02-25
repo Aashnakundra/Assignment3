@@ -5,9 +5,9 @@
 * 
 *  Name: Aashna Kundra Student ID: 163028210 Date: 2/24/2023
 *
-*  Cyclic Web App URL: https://long-bat-slacks.cyclic.app/
+*  Cyclic Web App URL: https://dark-erin-sneakers.cyclic.app
 *
-*  GitHub Repository URL: https://github.com/Aashnakundra/web322-app
+*  GitHub Repository URL: https://github.com/Aashnakundra/Assignment3.git
 *
 ********************************************************************************/ 
 var express = require("express");
